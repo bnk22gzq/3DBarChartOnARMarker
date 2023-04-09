@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>AR Demo</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://unpkg.com/aframe-charts-component/dist/aframe-charts-component.min.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+      .text {
+        margin-right: 10em; /* Adjust the distance between texts */
+      }
+    </style>
+</head>
+<body style='margin: 0px; overflow: hidden;'>
+    <a-scene embedded arjs >
+        <a-marker preset="hiro">
+         <a-entity rotation="0 20 0">
+          <!-- main title -->
+          <a-text value="Boston Monthly Tempreture 1910-2000" anchor="center" position="0.5 1.8 0" scale="0.5 0.5 0.5"></a-text>
+          <!-- base plane -->
+          <a-plane src="Grid_3.jpg" geometry="primitive:plane;" material="side: double; color: #d3d3d3; transparent: true; opacity: 0.5"  height="1.2" width="1.3"  rotation="-90 0 0" position="0.1 0 0" ></a-plane> 
+          <!-- x axis text - months-->
+          <a-text value="Month" position="0.05 0 0.9" scale="0.3 0.3 0.3" rotation="-90 0 0"></a-text>
+          <a-entity>
+            <a-text value="Jan" class="text" scale="0.3 0.3 0.3" position="-0.45 0 0.65" rotation="-90 -90 0"></a-text>
+            <a-text value="Feb"  class="text" scale="0.3 0.3 0.3"  position="-0.35 0 0.65" rotation="-90 -90 0" ></a-text>
+            <a-text value="Mar" class="text" scale="0.3 0.3 0.3" position="-0.25 0 0.65" rotation="-90 -90 0"></a-text>
+            <a-text value="April"  class="text" scale="0.3 0.3 0.3" position="-0.15 0 0.65" rotation="-90 -90 0"></a-text>
+            <a-text value="May" class="text" scale="0.3 0.3 0.3" position="-0.05 0 0.65" rotation="-90 -90 0"></a-text>
+            <a-text value="Jun"  class="text" scale="0.3 0.3 0.3" position="0.05 0 0.65" rotation="-90 -90 0"></a-text>
+            <a-text value="Jul"  class="text" scale="0.3 0.3 0.3" position="0.15 0 0.65" rotation="-90 -90 0"></a-text>
+            <a-text value="Aug" class="text" scale="0.3 0.3 0.3" position="0.25 0 0.65" rotation="-90 -90 0"></a-text>
+            <a-text value="Sep"  class="text" scale="0.3 0.3 0.3" position="0.35 0 0.65" rotation="-90 -90 0"></a-text>
+            <a-text value="Oct" class="text" scale="0.3 0.3 0.3" position="0.45 0 0.65" rotation="-90 -90 0"></a-text>
+            <a-text value="Nov" class="text" scale="0.3 0.3 0.3" position="0.55 0 0.65" rotation="-90 -90 0"></a-text>
+            <a-text value="Dec" class="text" scale="0.3 0.3 0.3" position="0.65 0 0.65" rotation="-90 -90 0"></a-text>
+          </a-entity>
+            <!-- y axis text - Tempreture-->
+            <a-text value="Tempreture" position="-0.75 0.5 -0.6" scale="0.3 0.3 0.3" rotation="0 0 -270"></a-text>
+            <a-entity>
+              <a-text value="0" class="text" scale="0.3 0.3 0.3" position="-0.62 0 -0.6" ></a-text>
+              <a-text value="20"  class="text" scale="0.3 0.3 0.3"  position="-0.64 0.29 -0.6"  ></a-text>
+              <a-text value="40" class="text" scale="0.3 0.3 0.3" position="-0.64 0.58 -0.6" ></a-text>
+              <a-text value="60"  class="text" scale="0.3 0.3 0.3" position="-0.64 0.84 -0.6"></a-text>
+              <a-text value="80" class="text" scale="0.3 0.3 0.3" position="-0.64 1.12 -0.6" ></a-text>
+            </a-entity>
+           <!-- Z axis text - Years-->
+           <a-text value="Year" position="-0.85 0 0" scale="0.3 0.3 0.3" rotation="-90 -90 0"></a-text>
+           <a-entity>
+             <a-text value="1910" class="text" scale="0.3 0.3 0.3" position="-0.75 0 -0.44" rotation="-90 0 0"></a-text>
+             <a-text value="1920"  class="text" scale="0.3 0.3 0.3"  position="-0.75 0 -0.34" rotation="-90 0 0" ></a-text>
+             <a-text value="1930" class="text" scale="0.3 0.3 0.3" position="-0.75 0 -0.24" rotation="-90 0 0"></a-text>
+             <a-text value="1940"  class="text" scale="0.3 0.3 0.3" position="-0.75 0 -0.14" rotation="-90 0 0"></a-text>
+             <a-text value="1950" class="text" scale="0.3 0.3 0.3" position="-0.75 0 -0.04" rotation="-90 0 0"></a-text>
+             <a-text value="1960"  class="text" scale="0.3 0.3 0.3" position="-0.75 0 0.04" rotation="-90 0 0"></a-text>
+             <a-text value="1970"  class="text" scale="0.3 0.3 0.3" position="-0.75 0 0.14" rotation="-90 0 0"></a-text>
+             <a-text value="1980" class="text" scale="0.3 0.3 0.3" position="-0.75 0 0.24" rotation="-90 0 0"></a-text>
+             <a-text value="1990"  class="text" scale="0.3 0.3 0.3" position="-0.75 0 0.34" rotation="-90 0 0"></a-text>
+             <a-text value="2000" class="text" scale="0.3 0.3 0.3" position="-0.75 0 0.44" rotation="-90 0 0"></a-text>
+           </a-entity>
+          <!--backside height=1.7 width=1.3  -->
+          <a-plane src="backgroundTexture.png" geometry="primitive:plane;" material="side: double;  transparent: true; opacity: 0.5 "  height="1.12" width="1.3" position="0.1 0.55 -0.6">
+          </a-plane>
+          <!-- side plane -->
+          <a-plane  src="sidetexture.png" geometry="primitive:plane;" material="side: double; color: #d3d3d3; transparent: true; opacity: 0.5"  height="1.12" width="1.2" rotation="0 -90 0" position="0.75 0.55 0"></a-plane>
+          
+          <!-- bar -->
+          <a-entity id="chart" rotation="0 0 0" position="0 0 0" scale="0.1 0.1 0.1"></a-entity> 
+        </a-marker>
+        <a-entity>
+      <a-entity camera></a-entity>
+    </a-scene>
+    <script src="Bar_chart.js"></script>
+  </body>
+</html>
+
+
